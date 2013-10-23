@@ -1,0 +1,34 @@
+{template "content","header"}
+<div id="content_main">
+  <div id="content" class="layout_center">
+    <div id="left">
+      <div class="left_title">
+        <h2>À¸Ä¿µ¼º½</h2>
+      </div>
+      <div class="left_body">
+        <dl>
+          {if $top_parentid}
+          {pc:content action="category" catid="$top_parentid" num="15" siteid="$siteid" order="listorder ASC"}
+          {loop $data $r}
+          <dt><a href="{$r[url]}">{$r[catname]}</a></dt>
+          {/loop}
+          {/pc}
+          {/if}
+        </dl>
+      </div>
+      <div class="left_bottom"></div>
+    </div>
+    <div id="right">
+      <div class="right_title"></span>
+        <h2>{$r[catname]}</h2>
+      </div>
+      <div class="right_body">
+        <h2 class="news_title">{$title}</h2>
+        <div class="news_content"> {$content} </div>
+      </div>
+      <div class="right_bottom"></div>
+    </div>
+    <div class="float_clear"></div>
+  </div>
+</div>
+{template "content","footer"}

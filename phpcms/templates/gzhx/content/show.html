@@ -1,0 +1,123 @@
+{template "content","header"}
+
+
+	
+    <div class="main">
+        <div class="S_left">
+            <h2 class="S_left_h2">
+                <img src="{SKIN_PATH}images/prod2.gif" />
+            </h2>
+            
+<style>
+    .zy_left{width:230px;}
+    #menu
+    {
+        width:230px;
+    }
+    #menu h2
+    {
+        width:230px;background:url({SKIN_PATH}images/left_bg.gif) ;font-size:12px;line-height:37px;margin-top:1px;
+    }
+    #menu h2 img{ float:left; margin-top:12px; margin-left:25px; margin-right:10px;}
+    #menu h2 a{color:#3c3c3c;width:230px;font-weight:800;}
+    .no1{color:#000;}
+    #menu ul
+    {
+        width: 230px;
+    }
+     #menu ul li { height:34px;line-height:34px;background:url({SKIN_PATH}images/left_bg2.gif); width:230px;}
+     #menu ul li img{ margin-left:32px;}
+    #menu ul li a{ font-size:12px;font-weight:100;}
+    #menu .no
+    {
+        display: none;
+    }
+    a.la
+    {
+        float: left;
+        margin-left: 25px;
+    }
+    a.shua
+    {
+        float: left;
+        margin-left: 25px;
+    }
+    a.se5
+    {
+        font-size: 12px !important;color:#37adce;
+    }
+</style>
+
+<div class="zy_left">
+    <div class="zy_nav2">
+        <div id="menu">
+           <span>
+           
+           
+		   
+    {pc:content action="lists" catid="6" num="5" order="id DESC" return="info"}
+
+
+                {loop $info $v}
+		   
+		   
+             <h2>
+                        <img src="{SKIN_PATH}images/icon2.gif">
+                        <a href="{$v['url']}" class="no1">
+                             {str_cut($v['title'],40)}
+                        </a>
+                           
+                </h2>
+				
+				
+				  {/loop}
+
+                {/pc}
+			 
+			 
+			 
+            
+                
+        </span>
+            
+            
+        </div>
+        <div class="di_bian">
+        </div>
+    </div>
+</div>
+
+        </div>
+        <div class="S_right">
+            <h2 class="S_right_h2">
+                <img src="{SKIN_PATH}images/prod_03.gif" />
+            </h2>
+            <center class="P_txt">
+                <h4 class="p_title">
+                   {$title}</h4>
+                <div>
+                   
+                    <center>
+                      
+					 {$content}
+					  
+                    </center>
+                </div>
+                <div style="float: left; margin-top: 10px">
+                   
+				<strong>上一篇：</strong><a href="{$previous_page[url]}">{$previous_page[title]}</a><br />
+                <strong>下一篇：</strong><a href="{$next_page[url]}">{$next_page[title]}</a>
+				
+                </div>
+               
+                <div class="clear">
+                </div>
+            </center>
+        </div>
+    </div>
+
+        <div class="clear"></div>
+		
+		
+		
+{template "content","footer"}
